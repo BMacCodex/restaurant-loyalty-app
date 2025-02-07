@@ -1,15 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import HomeScreen from "./screens/HomeScreen";
+import AppNavigator from "./navigation/AppNavigator";
 
 export default function App() {
-  return <HomeScreen />;
-  <AppNavigator />;
+  return <AppNavigator />; // ✅ This ensures HomeScreen gets navigation props
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

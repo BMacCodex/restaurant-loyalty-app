@@ -1,43 +1,23 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
+import { View, Text, Button, StyleSheet } from "react-native";
 
-export default function HomeScreen({ navigation }) {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Loyalty Points</Text>
-      <Text style={styles.points}>You have 0 points</Text>
+      <Text style={styles.title}>Welcome to Our Restaurant!</Text>
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("Scanner")}
-      >
-        <Text style={styles.buttonText}>Scan Receipt</Text>
-      </TouchableOpacity>
+      {/* Button to go to the Reservation Screen */}
+      <Button
+        title="Reserve a Table"
+        onPress={() => navigation.navigate("ReserveTable")}
+      />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  points: {
-    fontSize: 18,
-    marginTop: 10,
-  },
-  button: {
-    marginTop: 20,
-    backgroundColor: "#ff6347",
-    padding: 15,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-  },
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  title: { fontSize: 24, fontWeight: "bold", marginBottom: 20 },
 });
+
+export default HomeScreen;
